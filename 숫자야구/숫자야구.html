@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자야구</title>
+    <link rel="stylesheet" href="./숫자야구.css">
+</head>
+<body>
+    <div class="wrap">
+
+        <div class="wrap">
+        
+
+            <section class="section1">
+                <!-- 끝말잇기 -->
+                <h1 class="logo clearfix">숫자야구</h1>
+            </section>
+    
+    
+            <section class="section2">
+                <!-- 제시어 -->
+                <h2 class="word">* * *</h2>            
+                <!-- 입력레이아웃 -->
+                <form action="" class="form">
+                    <input type="text" class="in">
+                    <button class="btn">Enter!</button>
+                </form>
+    
+                <!-- 현황판 -->
+                <div class="countBox">
+                    <div class="strike">
+                        <p>스트라이크</p>
+                        <h2 class = "strike-count"> 0 </h2>
+                    </div>
+                    <div class="ball">
+                        <p>볼</p>
+                        <h2 class = "ball-count"> 0 </h2>
+                    </div>
+                    <div class="out">
+                        <p>아웃</p>
+                        <h2 class = "out-count"> 0 </h2>
+                    </div>
+                    <div class="gameCount">
+                        <p>남은기회</p>
+                        <h2 class="game-count"> 9 </h2>
+                    </div>
+                </div>
+                    <!-- 안내레이아웃 -->
+                    <h2 class="nav"> 숫자를 입력하세요. </h2>
+            </section>
+    
+            <section class="section3">
+                <!-- 룰 -->
+                <ul class="rull">
+                    <li>컴퓨터가 3개의 숫자를 뽑습니다.</li>
+                    <li>컴퓨터가 뽑은 3개의 숫자를 맞추면 됩니다.</li>
+                    <li>숫자와 숫자의 자리가 모두 맞으면 스트라이크</li>
+                    <li>숫자의 자리는 맞지 않고 숫자만 맞을 경우엔 볼</li>
+                    <li>두 경우 모두 아니라면 아웃입니다.</li>
+                    <li>기회는 총 9번이며 9번내로 맞추지 못할 경우 패배합니다.</li>
+                </ul>
+            </section>
+    
+        </div>
+    
+    </div>
+    <script src="./숫자야구.js"></script>
+</body>
+</html>

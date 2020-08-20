@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <link rel="stylesheet" href="./구구단.css">
+</head>
+<body>
+    <div class="wrap">
+        
+        <section class="section1">
+            <!-- 구구단 -->
+            <h1 class="logo clearfix">구구단</h1>
+        </section>
+
+
+        <section class="section2">
+            <!-- 문제 -->
+            <h2 class="problem"> </h2>            
+            <!-- 입력레이아웃 -->
+            <form action="" class="form">
+                <input type="text" class="in">
+                <button class="btn">Enter!</button>
+            </form>
+
+            <!-- 현황판 -->
+            <div class="countBox">
+                <div class="ok">
+                    <p>정답</p>
+                    <h2 class = "oCount">  </h2>
+                </div>
+                <div class="no">
+                    <p>오답</p>
+                    <h2 class = "xCount">  </h2>
+                </div>
+            </div>
+                <!-- 안내레이아웃 -->
+                <h2 class="nav"> 정답을 입력하세요. </h2>
+        </section>
+
+        <section class="section3">
+            <!-- 룰 -->
+            <ul class="rull">
+                <li>컴퓨터가 랜덤으로 문제를 냅니다.</li>
+                <li>컴퓨터가 낸 문제의 정답을 맞추면 됩니다.</li>
+                <li>10번의 게임이 끝나면 종료됩니다.</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script src="./구구단.js"></script>
+</body>
+</html>

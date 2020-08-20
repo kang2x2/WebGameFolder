@@ -1,0 +1,99 @@
+/* SECTION */
+body {
+    background: #000;
+    color: #FFF;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* SECTION1 */
+.header {
+    width: 100%;
+    height: 100px;
+    background: rgb(192, 46, 143);
+    background: linear-gradient(to top,
+    rgba(192, 46, 143, 0.1),
+    rgba(192, 46, 143, 0.4),
+    rgba(192, 46, 143, 0.7),
+    rgba(192, 46, 143, 0.9));
+}
+.header .logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    line-height: 80px;
+}
+
+.section1 a {
+    text-decoration: none;
+    color: #FFF;
+    transition: 0.4s;
+}
+
+.section1 a:hover {
+    transition: 0.4s;
+    font-size: 45px;
+}
+
+/* SECTION2 */
+.game-list {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section2 a {
+    text-decoration: none;
+    color: #FFF;
+    display: block;
+    text-indent: -9999em;
+    transition: 0.5s;
+    width: 200px;
+    height: 200px; 
+    margin: 40px;
+}
+
+.multifly:hover, .word-game:hover,
+.base-ball:hover, .tictacto:hover,
+.lotto:hover{
+    transition: 0.5s;
+    transform: scale(1.2, 1.2);
+}
+
+.multifly:active, .word-game:active,
+.base-ball:active, .tictacto:active {
+    transition: 0.5s;
+    transform: translate(0, -10%);
+}
+
+.multifly  {
+    background-image: url('./images/multiply.png');
+    background-size: cover;
+
+}
+
+.word-game {
+    background-image: url('./images/wordGame.png');
+    background-size: cover;
+    border-radius: 100px;
+}
+
+.base-ball {
+    background-image: url('./images/base-ball.png');
+    background-size: cover;
+}
+
+.tictacto {
+    background-image: url('./images/tictacto.jpg');
+    background-size: contain;
+    border-radius: 100px;
+}   
+.lotto {
+    background-image: url('./images/lotto.jpg');
+    background-size: contain;
+    border-radius: 100px; 
+}
