@@ -42,26 +42,20 @@ body {
     background: rgb(54, 29, 71);
     color: #FFF;
 }
-table {
-    border: 1px solid #FFF;
-    font-size: 30px;
-    text-align: center;
+
+#num {
+    margin-bottom: 20px;
+    display: flex;
 }
-table td {
-    border: 1px solid #FFF;
-    width: 50px;
-    height: 50px;
+/* #num li {
+    border: 1px solid black;
+    border-radius: 100px;
+} */
+
+.red {
+    color: red;
 }
-.show {
-    display: block;
-}
-.hide {
-    display: none;
-}
-.gridBox h2 {
-    margin: 0;
-    border-top: 1px solid #FFF;
-}
+
 /* //SECTION2 */
 
 /* SECTION3 */
