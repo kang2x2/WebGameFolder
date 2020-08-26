@@ -17,6 +17,10 @@ body {
     display: grid;
     align-items: space-between;
 }
+
+.hide {
+    display: none;
+}
 /* //SETTING */
 
 /* SECTION1 */
@@ -43,17 +47,57 @@ body {
     color: #FFF;
 }
 
-#num {
+/* 플레이어 박스 */
+#pNum {
     margin-bottom: 20px;
     display: flex;
+    padding: 0;
 }
-/* #num li {
-    border: 1px solid black;
+#pNum li {
+    list-style: none;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
     border-radius: 100px;
-} */
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
 
+/* 컴퓨터 박스 */
+#cNum {
+    margin-bottom: 20px;
+    display: flex;
+    padding: 0;
+}
+#cNum li {
+    list-style: none;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+/* 색상 */
+.yellow {
+    background: yellow;
+}
+.blue {
+    background: blue;
+}
 .red {
-    color: red;
+    background: red;
+}
+.gray {
+    background: gray;
+}
+.green {
+    background: green;
 }
 
 /* //SECTION2 */

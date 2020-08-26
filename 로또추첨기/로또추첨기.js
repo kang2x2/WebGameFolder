@@ -1,193 +1,248 @@
-let num = document.getElementById('num');
-let title = document.querySelector('.title');
+// 로또 번호
+let playerN1 = document.getElementById('pN1');
+let playerN2 = document.getElementById('pN2');
+let playerN3 = document.getElementById('pN3');
+let playerN4 = document.getElementById('pN4');
+let playerN5 = document.getElementById('pN5');
+let playerN6 = document.getElementById('pN6');
+let plusIcon = document.getElementById('plus');
+let playerBonus = document.getElementById('pBonus');
 
-// let n1 = document.getElementsByClassName('n1');
-// let n2 = document.getElementsByClassName('n2');
-// let n3 = document.getElementsByClassName('n3');
-// let n4 = document.getElementsByClassName('n4');
-// let n5 = document.getElementsByClassName('n5');
-// let n6 = document.getElementsByClassName('n6');
-// let n7 = document.getElementsByClassName('n7');
+let comN1 = document.getElementById('cN1');
+let comN2 = document.getElementById('cN2');
+let comN3 = document.getElementById('cN3');
+let comN4 = document.getElementById('cN4');
+let comN5 = document.getElementById('cN5');
+let comN6 = document.getElementById('cN6');
 
 
+// 버튼
 let btn1 = document.getElementById('btn1');
-let btn2 = document.getElementById('btn2');
-let textBox = document.querySelector('.text-box');
 
-let winCount = 0;
-/////////////lotto
-// 플레이어 변수
-let count = 0;
-let overlap = true;
-let pNum = Array(7);
+// 
+let text = document.querySelector('.text-box');
 
-// 컴퓨터 변수
-let comCount = 0;
-let comOverlap = true;
-let comNum = Array(7);
+// js장치들
+let overlap = false;
+let bonusOverlap = false;
+let comOverlap = false;
 
-/////////////연금
-// 플레이어 변수
-let count2 = 0;
-let overlap2 = true;
-let pNum2 = Array(6);
+// js숫자들
+let pNumArray = Array(6);
+let cNumArray = Array(6);
+let bonusNum = 0;
 
-// 컴퓨터 변수
-let comCount2 = 0;
-let comOverlap2 = true;
-let comNum2 = Array(6);
-
-
-///////////////////////// lotto복권
-btn1.addEventListener('click', function() {
+// 로또복권 
+btn1.addEventListener('click', function(event) {
     event.preventDefault();
-    title.innerHTML = '로또복권';
-    textBox.innerHTML = '';
-// 컴퓨터 번호 뽑기
-while(comCount < 7) {
-    let comPick = Math.floor(Math.random() * 45 + 1);
-    for(let i = 0; i < comCount; ++i) {
-        if(comNum[i] === comPick) {
-            comOverlap = false;
-        }
-    }
-    if(comOverlap) {
-        comNum[comCount] = comPick;
-        comCount = comCount + 1;
-    }
+    // 번호를 다시 뽑을때 바뀌기 전 번호가 보이지 않도록
+    text.innerHTML = ' ';
+    hide(playerN1), hide(playerN2), 
+    hide(playerN3), hide(playerN4), hide(playerN5),
+    hide(playerN6), hide(plusIcon), hide(playerBonus),
+    hide(comN1), hide(comN2), hide(comN3),
+    hide(comN4), hide(comN5), hide(comN6);
 
-    comOverlap = true;
-}
-
-// 플레이어 번호 뽑기
-while(count < 7) {
-    let pick = Math.floor(Math.random() * 45 + 1);
-    for(let i = 0; i < count; ++i) {
-        if(pNum[i] === pick) {
-            overlap = false;
-        }     
-        
-    }
-    if(overlap) {
-        pNum[count] = pick;
-        count = count + 1;
-    } 
-
-    overlap = true;
-    num.innerHTML = pNum;
-}
-
-
-
-// 컴퓨터와 플레이어의 번호 비교
-for(let i = 0; i < 6; ++i) {
-    if(pNum.indexOf(comNum[i]) > -1) {
-        winCount++;
-    }
-    console.log(pNum.indexOf(comNum[i]));
-}
-console.log('컴퓨터' + comNum);
-count = 0; // 플레이어가 다시 숫자를 뽑기 위함.
-
-// 결과창
-if(winCount === 1) {
-    textBox.innerHTML = '기본번호 1개 일치 꽝!';
-}
-else if(winCount === 2) {
-    textBox.innerHTML = '기본번호 2개 일치 꽝!';
-}
-else if(winCount === 3) {
-    textBox.innerHTML = '기본번호 3개 일치 5등!!';
-}
-else if(winCount === 4) {
-    textBox.innerHTML = '기본번호 4개 일치 4등!!!';
-}
-else if(winCount === 5) {
-    textBox.innerHTML = '기본번호 5개 일치 3등!!!!';
-}
-else if(winCount === 6) {
-    textBox.innerHTML = '기본번호 6개 일치 1등!!!!!!';
-}
-else {
-    textBox.innerHTML = '기본번호 0개 일치 꽝!'
-}
-
-winCount = 0;
-})
-
-
-///////////////////////// 연금복권
-btn2.addEventListener('click', function(event) {
-    event.preventDefault();
-    title.innerHTML = '연금복권';
-    textBox.innerHTML = '';
-    // 컴퓨터 번호 뽑기.
-    while(comCount2 < 6) {
-        let comPick = Math.floor(Math.random() * 45 + 1);
-        for(let i = 0; i < comCount2; ++i) {
-            if(comNum2[i] === comPick) {
-                comOverlap2 = false;
-            }
-        }
-        if(comOverlap2) {
-            comNum2[comCount2] = comPick;
-            comCount2 = comCount2 + 1;
-        }
-    
-        comOverlap2 = true;
-    }
-    
-    // 플레이어 번호 뽑기
-    while(count2 < 6) {
-        let pick = Math.floor(Math.random() * 45 + 1);
-        for(let i = 0; i < count2; ++i) {
-            if(pNum2[i] === pick) {
-                overlap2 = false;
-            }     
-        }
-        if(overlap2) {
-            pNum2[count2] = pick;
-            count2 = count2 + 1;
-        } 
-    
-        overlap2 = true;
-        num.innerHTML = pNum2;
-    }
-
-    // 컴퓨터와 플레이어의 번호 비교
+    // 중복 수 제외하며 6개 번호 뽑기.
     for(let i = 0; i < 6; ++i) {
-        if(pNum2[i] === comNum2[i]) {
-            winCount++;
+        let playerPick = Math.floor(Math.random() * 45 + 1);
+        if(pNumArray.indexOf(playerPick) > -1) {
+            overlap = true;
+            i--;
         }
-        console.log(pNum2, comNum2);
+        else if(!overlap) {
+            pNumArray[i] = playerPick;
+        }
+        overlap = false;
     }
-    console.log('컴퓨터' + comNum2);
-    count2 = 0; // 플레이어가 다시 숫자를 뽑기 위함.
 
-    // 결과창
-    if(winCount === 1) {
-        textBox.innerHTML = '기본번호 1개 일치 꽝!';
+    //보너스 번호 뽑기
+    let escape = 0;
+    while(escape < 1) {
+        let bonusPick = Math.floor(Math.random() * 45 + 1);
+        // 보너스 번호가 이미 뽑은 6개의 번호 중 하나와 중복일 때
+        if(pNumArray.indexOf(bonusPick) > -1) {
+            bonusOverlap = true;
+            console.log(bonusPick, '중복!')
+        }
+        else if(!bonusOverlap) {
+            bonusNum = bonusPick;
+            escape++;
+        }
+        bonusOverlap = false;
     }
-    else if(winCount === 2) {
-        textBox.innerHTML = '기본번호 2개 일치 꽝!';
+
+
+
+
+
+    // html에 번호 삽입.
+    setTimeout(function() {
+        inHtml(playerN1, pNumArray[0]);
+        color(playerN1, pNumArray[0]);
+    }, 100);
+    setTimeout(function() {
+        inHtml(playerN2, pNumArray[1]);
+        color(playerN2, pNumArray[1]);
+    }, 300);
+    setTimeout(function() {
+        inHtml(playerN3, pNumArray[2]);
+        color(playerN3, pNumArray[2]);
+    }, 500);
+    setTimeout(function() {
+        inHtml(playerN4, pNumArray[3]);
+        color(playerN4, pNumArray[3]);
+    }, 700);
+    setTimeout(function() {
+        inHtml(playerN5, pNumArray[4]);
+        color(playerN5, pNumArray[4]);
+    }, 900);
+    setTimeout(function() {
+        inHtml(playerN6, pNumArray[5]);
+        color(playerN6, pNumArray[5]);
+    }, 1100);
+    setTimeout(function() {
+        plusIcon.innerHTML = '+';
+        plusIcon.classList.remove('hide');
+    }, 1300);
+    setTimeout(function() {
+        inHtml(playerBonus, bonusNum);
+        color(playerBonus, bonusNum);
+    }, 1300)
+    
+///////////////////////////////////////////////////   
+
+    // 컴퓨터 번호뽑기.
+    for(let i = 0; i < 6; ++i) {
+        let comPick = Math.floor(Math.random() * 45 + 1);
+        if(cNumArray.indexOf(comPick) > -1) {
+            comOverlap = true;
+            i--;
+        }
+        if(!comOverlap) {
+            cNumArray[i] = comPick;
+        }
+        comOverlap = false;
     }
-    else if(winCount === 3) {
-        textBox.innerHTML = '기본번호 3개 일치 5등!!';
+
+    setTimeout(function() {
+        inHtml(comN1, cNumArray[0]);
+        color(comN1, cNumArray[0]);
+        inHtml(comN2, cNumArray[1]);
+        color(comN2, cNumArray[1]);
+        inHtml(comN3, cNumArray[2]);
+        color(comN3, cNumArray[2]);
+        inHtml(comN4, cNumArray[3]);
+        color(comN4, cNumArray[3]);
+        inHtml(comN5, cNumArray[4]);
+        color(comN5, cNumArray[4]);
+        inHtml(comN6, cNumArray[5]);
+        color(comN6, cNumArray[5]);
+    }, 1500)
+
+
+    // 정답 비교
+    let winCount = 0;
+    let bonusCount = 0;
+    for(let i = 0; i < 6; ++i) {
+        if(pNumArray[i] === cNumArray[i]) {
+            winCount = winCount + 1;
+        }
+        if(bonusNum === cNumArray[i]) {
+            bonusCount = bonusCount + 1;
+        }
     }
-    else if(winCount === 4) {
-        textBox.innerHTML = '기본번호 4개 일치 4등!!!';
+    console.log(winCount, bonusCount);
+
+    // 결과
+    setTimeout(function(){
+        // 5등
+        if(winCount === 3) {
+            text.innerHTML = '기본번호 3개 번호 일치 5등!';
+        }
+        // 4등
+        else if(winCount === 4) {
+            text.innerHTML = '기본번호 4개 번호 일치 4등!!.';
+        }
+        // 3등
+        else if(winCount === 5) {
+            text.innerHTML = '기본번호 5개 번호 일치 3등!!!';
+        }
+        // 2등
+        else if(winCount === 5 && bonusCount === 1){
+            text.innerHTML = '기본번호 5개와 보너스 번호 일치 2등!!!!'
+        }
+        // 1등
+        else if(winCount === 6) {
+            text.innerHTML = '기본번호 6개 일치 1등!!!!!';
+        }
+        // 꽝
+        else {
+            text.innerHTML = '기본번호 3개 미만일치로 꽝입니다.';
+        }
+    }, 1500);
+    // 점수 초기화
+});
+
+
+
+
+
+// 함수들
+
+// 다시돌릴때 값이 남아있지 않도록 안보이게
+function hide(hn) {
+    hn.classList.add('hide');
+}
+
+// html에 번호 넣기
+function inHtml(hn, jn) {
+    hn.innerHTML = jn;
+    hn.classList.remove('hide');
+}
+
+// 공 색상 함수
+function color(hn, jn) {
+    if(jn <= 10) {
+        hn.classList.add('yellow');
+        hn.classList.remove('blue');
+        hn.classList.remove('red');
+        hn.classList.remove('gray');
+        hn.classList.remove('green');
     }
-    else if(winCount === 5) {
-        textBox.innerHTML = '기본번호 5개 일치 3등!!!!';
+    else if(jn >= 11 && jn <=20) {
+        hn.classList.add('blue');
+        hn.classList.remove('yellow');
+        hn.classList.remove('red');
+        hn.classList.remove('gray');
+        hn.classList.remove('green');
     }
-    else if(winCount === 6) {
-        textBox.innerHTML = '기본번호 6개 일치 1등!!!!!!';
+    else if(jn >= 21 && jn <= 30) {
+        hn.classList.add('red');
+        hn.classList.remove('yellow');
+        hn.classList.remove('blue');
+        hn.classList.remove('gray');
+        hn.classList.remove('green');        
+    }
+    else if(jn >= 31 && jn <= 40) {
+        hn.classList.add('gray');
+        hn.classList.remove('yellow');
+        hn.classList.remove('blue');
+        hn.classList.remove('red');
+        hn.classList.remove('green');        
     }
     else {
-        textBox.innerHTML = '기본번호 0개 일치 꽝!'
+        hn.classList.add('green');
+        hn.classList.remove('yellow');
+        hn.classList.remove('blue');
+        hn.classList.remove('red');
+        hn.classList.remove('gray');          
     }
+}
 
-    winCount = 0;
-})
+
+
+
+
 
 
