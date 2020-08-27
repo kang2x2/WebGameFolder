@@ -21,6 +21,13 @@ body {
 .hide {
     display: none;
 }
+
+.show {
+    border: 3px solid rgba(255, 255, 255, 0.877);
+}
+.bonus-show {
+    border: 3px solid rgb(247, 183, 7);
+}
 /* //SETTING */
 
 /* SECTION1 */
@@ -49,29 +56,24 @@ body {
 
 /* 플레이어 박스 */
 #pNum {
+    height: 50px;
     margin-bottom: 20px;
     display: flex;
     padding: 0;
-}
-#pNum li {
-    list-style: none;
-    color: #000;
-    font-weight: bold;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 100px;
-    width: 50px;
-    height: 50px;
-    margin: 5px;
+    align-items: center;
 }
 
 /* 컴퓨터 박스 */
 #cNum {
+    height: 50px;
     margin-bottom: 20px;
     display: flex;
     padding: 0;
+    align-items: center;
 }
-#cNum li {
+
+/* 번호 스타일 */
+#num-bord {
     list-style: none;
     color: #000;
     font-weight: bold;
@@ -81,6 +83,50 @@ body {
     width: 50px;
     height: 50px;
     margin: 5px;
+}
+#cNum li, #pNum li {
+    list-style: none;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+#pNum #pBonus {
+    color: rgb(59, 198, 223);
+}
+
+/* nav */
+.nav {
+    display: flex;
+    flex-direction: column;
+}
+.nav li {
+    list-style: none;
+    margin-right: 10px;
+}
+.nav li:nth-child(1) {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(14, 235, 69);
+}
+.nav li:nth-child(2) {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(61, 133, 13);
+}
+.nav li:nth-child(3) {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(180, 206, 32);
+}
+.nav li:nth-child(4) {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(191, 194, 178);
 }
 
 /* 색상 */

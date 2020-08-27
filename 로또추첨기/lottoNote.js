@@ -1,0 +1,41 @@
+    // html에 computer 번호 삽입.
+    setTimeout(function() {
+        inHtml(comN1, cNumArray[0]);
+        color(comN1, cNumArray[0]);
+        inHtml(comN2, cNumArray[1]);
+        color(comN2, cNumArray[1]);
+        inHtml(comN3, cNumArray[2]);
+        color(comN3, cNumArray[2]);
+        inHtml(comN4, cNumArray[3]);
+        color(comN4, cNumArray[3]);
+        inHtml(comN5, cNumArray[4]);
+        color(comN5, cNumArray[4]);
+        inHtml(comN6, cNumArray[5]);
+        color(comN6, cNumArray[5]);
+    }, 1500)
+
+    // html에 player 번호 삽입.
+    setTimeout(function() {
+        inHtml(playerN1, pNumArray[0]);
+        color(playerN1, pNumArray[0]);
+    }, 100);
+    setTimeout(function() {
+        inHtml(playerN2, pNumArray[1]);
+        color(playerN2, pNumArray[1]);
+    }, 300);
+    setTimeout(function() {
+        inHtml(playerN3, pNumArray[2]);
+        color(playerN3, pNumArray[2]);
+    }, 500);
+    setTimeout(function() {
+        inHtml(playerN4, pNumArray[3]);
+        color(playerN4, pNumArray[3]);
+    }, 700);
+    setTimeout(function() {
+        inHtml(playerN5, pNumArray[4]);
+        color(playerN5, pNumArray[4]);
+    }, 900);
+    setTimeout(function() {
+        inHtml(playerN6, pNumArray[5]);
+        color(playerN6, pNumArray[5]);
+    }, 1100);
