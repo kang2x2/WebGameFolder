@@ -1,3 +1,28 @@
+// 전체 slide 영역 
+let btnHome = document.getElementById('button-home');
+let btnGame = document.getElementById('button-game');
+let btnEx = document.getElementById('button-ex');
+
+let slide = document.getElementById('slide-area');
+let slide_1 = document.getElementById('slide_01');
+let slide_2 = document.getElementById('slide_02');
+
+btnHome.addEventListener('click', function(){
+    slide.style.transition = "0.4s";
+    slide.style.transform = "translate(0, 0)";
+})
+
+btnGame.addEventListener('click', function(){
+    slide.style.transition = "0.4s";
+    slide.style.transform = "translate(-100%, 0)";
+})
+
+btnEx.addEventListener('click', function(){
+    slide.style.transition = "0.4s";
+    slide.style.transform = "translate(-200%, 0)";
+})
+
+// slide_02(Game영역)
 let a1 = document.querySelector('.a-1');
 let a2 = document.querySelector('.a-2');
 let a3 = document.querySelector('.a-3');

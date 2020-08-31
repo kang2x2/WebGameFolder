@@ -72,7 +72,9 @@ body {
     background: rgb(70, 6, 61);
     color: #FFF;
 }
-.rull li {
-
+@media (max-width: 720px) {
+    .rull li {
+        margin-left: 50px;
+    }
 }
 /* //SECTION3 */

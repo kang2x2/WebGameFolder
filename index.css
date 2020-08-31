@@ -1,4 +1,4 @@
-/* SECTION */
+/* SETTING */
 body {
     background: #000;
     color: #FFF;
@@ -8,10 +8,14 @@ body {
     padding: 0;
 }
 
+li {
+    list-style: none;
+}
+
 /* SECTION1 */
 .header {
     width: 100%;
-    height: 100px;
+    height: 100%;
     background: rgb(192, 46, 143);
     background: linear-gradient(to top,
     rgba(192, 46, 143, 0.1),
@@ -27,29 +31,52 @@ body {
     line-height: 80px;
 }
 
-.section1 a {
-    text-decoration: none;
-    color: #FFF;
-    transition: 0.4s;
+.header #tag {
+    display: flex;
+    justify-content: space-around;
 }
 
-.section1 a:hover {
+.header a {
+    text-decoration: none;
+    color: #FFF;
+    transition: 0.4s; 
+}
+
+.header a:hover, .header button:hover {
     transition: 0.4s;
-    font-size: 45px;
+    color: rgb(30, 218, 86);
 }
 
 /* SECTION2 */
-.game-list {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.section2 {
+    width: 100%;
+    overflow: hidden;
+}
+/* slide-area */
+#slide-area {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 100%);
 }
 
-.section2 a {
+#slide-area li {
+    width: 100%;
+    transition: 0.4s;
+}
+/* slide_01 */
+
+
+/* slide_02 */
+#slide_02 .game-list {
+    display: grid;
+    grid-template-columns: repeat(3,300px);  
+    justify-content: space-around;
+}
+
+.game-list a {
+    display: block;
     text-decoration: none;
     color: #FFF;
-    display: block;
     text-indent: -9999em;
     transition: 0.5s;
     width: 200px;
@@ -70,10 +97,9 @@ body {
     transform: translate(0, -10%);
 }
 
-.multifly  {
+.game-list .multifly {
     background-image: url('./images/multiply.png');
     background-size: cover;
-
 }
 
 .word-game {
@@ -96,4 +122,20 @@ body {
     background-image: url('./images/lotto.jpg');
     background-size: contain;
     border-radius: 100px; 
+}
+
+@media (max-width: 1920px) {
+    body {
+        background: blue;
+    }
+}
+@media (max-width: 1280px) {
+    body {
+        background: red;
+    }
+}
+@media (max-width: 640px) {
+    body {
+        background: green;
+    }
 }
